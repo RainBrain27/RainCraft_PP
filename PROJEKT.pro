@@ -15,7 +15,7 @@ RESOURCES     = textures.qrc
 QT           += widgets
 
 # install
-target.path = $$[QT_INSTALL_EXAMPLES]/opengl/textures
-INSTALLS += target
+#target.path = $$[QT_INSTALL_EXAMPLES]/opengl/textures
+#INSTALLS += target
 
 INCLUDEPATH += "D:/Programieren/Umbgebungen/glm/glm/"

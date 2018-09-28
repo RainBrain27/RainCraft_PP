@@ -23,7 +23,7 @@ void BaseObject::moveTo(glm::vec4 destvec)
     move(destvec-center);
 }
 
-void BaseObject::rotate(glm::vec3 deg)
+void BaseObject::rotate(glm::vec3 deg1, glm::vec3 deg2 ,glm::vec4 DP) //deg=pitch/yaw/roll DP=Drehpunkt
 {
     rotate2();
 
@@ -35,6 +35,7 @@ void BaseObject::rotate(glm::vec3 deg)
     for(PPoint &p: points){
         p=mxyz*p;
     }
+    center=mxyz*center;
 }
 
 void BaseObject::rotate2()
@@ -46,6 +47,16 @@ void BaseObject::rotate2()
     for(PPoint &p: points){
         p=mzyx*p;
     }
+    center=mzyx*center;
+}
+
+void BaseObject::spin(glm::vec3 deg)
+{
+    glm::vec4 center_save = center;
+    moveTo(glm::vec4(0,0,0,1));
+
+
+    moveTo()
 }
 
 void BaseObject::refreshPolygonPointCounter()

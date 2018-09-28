@@ -24,8 +24,13 @@ public:
 
     void move(glm::vec4 dirvec);
     void moveTo(glm::vec4 destvec);
-    void rotate(glm::vec3 deg);
-    void rotate2();
+
+protected:
+    void Orotate(glm::vec3 deg1, glm::vec3 deg2); //solve with vec4
+    void OrotateTo(glm::vec3 deg1, glm::vec3 deg2);
+    void Orotate2(glm::vec3 deg1);
+    glm::vec3 Oget_angle(glm::vec4 DP);
+
 
 public:
     void setPointList(PointList l)
