@@ -1,9 +1,9 @@
 #ifndef BASEOBJECT_H
 #define BASEOBJECT_H
 
-
 #include <glm.hpp>
 #include <vector>
+#include <c++/cstddef>
 
 typedef glm::vec4 PPoint;
 typedef std::vector<PPoint> PointList;
