@@ -22,17 +22,19 @@ set(EXEC_SRC
     skycube.cpp
     skycube.h
     window.cpp
-    window.h)
+    window.h ressourceloader.cpp ressourceloader.h raincraft_global.h)
 
-include_directories("D:/dev/glm-stable/glm")
+include_directories("D:/developement/glm-stable/glm")
 	
 find_package(Qt5Core CONFIG REQUIRED)
 find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
+find_package(Qt5Xml CONFIG REQUIRED)
 
 get_target_property(QtCore_location Qt5::Core LOCATION)
 get_target_property(QtGui_location Qt5::Gui LOCATION)
 get_target_property(QtWidgets_location Qt5::Widgets LOCATION)
+get_target_property(QtXml_location Qt5::Xml LOCATION)
 
 
 add_executable(RainCraft_PP ${EXEC_SRC} textures.qrc)
@@ -41,6 +43,7 @@ set(CMAKE_EXE_LINKER_FLAGS " -static")
 target_link_libraries(RainCraft_PP Qt5::Core)
 target_link_libraries(RainCraft_PP Qt5::Gui)
 target_link_libraries(RainCraft_PP Qt5::Widgets)
+target_link_libraries(RainCraft_PP Qt5::Xml)
 target_link_libraries(RainCraft_PP -static-libgcc -static-libstdc++)
 
 install(TARGETS RainCraft_PP RUNTIME DESTINATION bin)

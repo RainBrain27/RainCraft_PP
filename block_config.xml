@@ -1,0 +1,44 @@
+<blocks>
+	<block>
+		<name>Dreck</name>
+		<textures>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+		</textures>
+		<attributes>
+			<solid>true</solid>
+			<water_level_cap>25</water_level_cap>
+			<water_stream_in>10</water_stream_in>
+			<water_stream_out>10</water_stream_out>
+			<gravity>false</gravity>
+			<visible>true</visible>
+			<translucent>false</translucent>
+			<mining_resistance>20</mining_resistance>
+		</attributes><!--weitere Eigenschaften hinzufügen-->
+	</block>
+	<block>
+		<name>Stein</name>
+		<textures>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+			<texture_file>dateiname</texture_file>
+		</textures>
+		<attributes>
+			<solid>true</solid>
+			<water_level_cap>0</water_level_cap>
+			<water_stream_in>0</water_stream_in>
+			<water_stream_out>0</water_stream_out>
+			<gravity>false</gravity>
+			<visible>true</visible>
+			<translucent>false</translucent>
+			<mining_resistance>40</mining_resistance>
+		</attributes>
+	</block>
+</blocks>

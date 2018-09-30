@@ -51,9 +51,13 @@
 #include <QApplication>
 #include <QSurfaceFormat>
 
+#include "ressourceloader.h"
+
 #include "window.h"
 
 #include "glwidget.h"
+
+RessourceLoader *ressources = new RessourceLoader();
 
 int main(int argc, char *argv[])
 {
@@ -65,9 +69,14 @@ int main(int argc, char *argv[])
     format.setDepthBufferSize(24);
     QSurfaceFormat::setDefaultFormat(format);
 
+    ressources->parseBlockPrototypes("block_config.xml");
+
     GLWidget *glWidget = new GLWidget();
     glWidget->show();
-    return app.exec();
+    int retVal = app.exec();
+    delete ressources;
+    return retVal;
 }
 
 //HACKED BY SVEN
+//RE-HACKED BY BERND
