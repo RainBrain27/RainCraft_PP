@@ -64,7 +64,8 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(textures);
 
     QApplication app(argc, argv);
-
+	ressources.parse_block_config("block_config.xml");
+	
     QSurfaceFormat format;
     format.setDepthBufferSize(24);
     QSurfaceFormat::setDefaultFormat(format);

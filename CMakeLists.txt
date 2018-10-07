@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(RainCraft_PP)
+project(test)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -9,23 +9,13 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 set(EXEC_SRC
-    baseobject.cpp
-    baseobject.h
-    camara.cpp
-    camara.h
-    CMakeLists.txt
-    cube.cpp
-    cube.h
-    glwidget.cpp
-    glwidget.h
-    main.cpp
-    skycube.cpp
-    skycube.h
-    window.cpp
-    window.h ressourceloader.cpp ressourceloader.h raincraft_global.h)
+        main.cpp
+        ressourceloader.cpp
+        ressourceloader.h
+        raincraft_global.h)
 
 include_directories("D:/developement/glm-stable/glm")
-	
+
 find_package(Qt5Core CONFIG REQUIRED)
 find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
@@ -37,13 +27,13 @@ get_target_property(QtWidgets_location Qt5::Widgets LOCATION)
 get_target_property(QtXml_location Qt5::Xml LOCATION)
 
 
-add_executable(RainCraft_PP ${EXEC_SRC} textures.qrc)
+add_executable(test ${EXEC_SRC})
 
 set(CMAKE_EXE_LINKER_FLAGS " -static")
-target_link_libraries(RainCraft_PP Qt5::Core)
-target_link_libraries(RainCraft_PP Qt5::Gui)
-target_link_libraries(RainCraft_PP Qt5::Widgets)
-target_link_libraries(RainCraft_PP Qt5::Xml)
-target_link_libraries(RainCraft_PP -static-libgcc -static-libstdc++)
+target_link_libraries(test Qt5::Core)
+target_link_libraries(test Qt5::Gui)
+target_link_libraries(test Qt5::Widgets)
+target_link_libraries(test Qt5::Xml)
+target_link_libraries(test -static-libgcc -static-libstdc++)
 
-install(TARGETS RainCraft_PP RUNTIME DESTINATION bin)
+#install(TARGETS test RUNTIME DESTINATION bin)

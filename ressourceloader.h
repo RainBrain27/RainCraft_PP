@@ -10,27 +10,31 @@
 #include <QtXml/QDomDocument>
 #include <QtCore/QFile>
 #include <QtCore/QMap>
+#include <QImage>
+#include <QList>
 
-class QImage;
-struct BlockPrototype{
-    QMap<QString,QString> attributes; //optimierbar
+struct Texture{
+    QImage texture;
+    QString fileName;
+    quint64 id;
 };
 
-struct BlockTexture{
-    QImage *t[];
+struct BlockPrototype{
+    QMap<QString,QString> attributes; //optimierbar
+    std::vector<Texture*> textures;
 };
 
 class RessourceLoader{
 public:
     RessourceLoader();
     ~RessourceLoader();
-    bool parseBlockPrototypes(const QString &fileName);
-    void parseBlockElement(QDomElement *block);
+    bool parse_block_config(const QString &fileName);
 private:
-    QHash<QString, BlockTexture> textures; // Blockname -> Texturenobjekt
-    QHash<QString, BlockPrototype> blockAttributes;  //Blockname -> BlockPrototype Objekt
-    QDomDocument xml;
-    QFile xmlFile;
+    void parseBlockElement(QDomElement *block);
+    Texture *loadTexture(const QString &fileName);
+private:
+    QList<Texture*> allTextures;
+    QHash<quint64,BlockPrototype> prototypes;
     quint64 blockID = 0, textureID = 0;
 };
 
