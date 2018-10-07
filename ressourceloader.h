@@ -29,6 +29,8 @@ public:
     RessourceLoader();
     ~RessourceLoader();
     bool parse_block_config(const QString &fileName);
+    const BlockPrototype *getBlockPrototype(quint64 id)const{return &prototypes[id];}
+    const QHash<quint64,BlockPrototype> *getAllBlockPrototypes()const{return &prototypes;}
 private:
     void parseBlockElement(QDomElement *block);
     Texture *loadTexture(const QString &fileName);
